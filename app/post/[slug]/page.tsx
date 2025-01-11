@@ -111,7 +111,7 @@ export default async function PostDetails({params}:{params:{slug:string}})  {
         {/* ----------------------if there is galery map over it --------------------- */}
         {data.gallery && data.gallery.length > 0 && (
           data.gallery.map((galleryData, index) => (
-            <div className='w-full flex flex-col py-10'>
+            <div className='w-full flex flex-col py-10' key={index}>
               {/* if image   */}
               <Image 
                 src={galleryData.imageUrl} 
