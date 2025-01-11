@@ -1,4 +1,4 @@
-import { createClient } from "@sanity/client";
+import { createClient } from "next-sanity";
 // inside here we have to pass actually three values project Id , data set ,api version
 
 export const client = createClient({
