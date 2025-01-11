@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link href='/' className=' text-3xl font-bold '>
             NO <span className='text-primary'>Name</span>
         </Link>
-        <ModeToggle/>
+        {/* <ModeToggle/> */}
     </nav>
   )
 }
