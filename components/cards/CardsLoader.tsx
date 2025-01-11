@@ -1,7 +1,8 @@
 
-import { client } from '@/app/sanity/client';
+
 import React from 'react'
 import CardComponent from './CardComponent';
+import { client } from '@/app/sanityClient/client';
 
 
 
