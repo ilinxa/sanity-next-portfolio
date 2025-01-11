@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#030014]`}
         >
         <ThemeProvider
           attribute="class"
@@ -41,7 +41,7 @@ export default function RootLayout({
           <Navbar/>
           <main className=" mx-auto  min-h-screen pt-[100px] ">
             {children}
-          
+            {/* <video src="blackhole.webm" className="z-[1000]"></video> */}
           </main>
           <div className="z-[500]">
 

@@ -9,7 +9,8 @@ body {
   mix-blend-mode:hard-light;
 }
 
-.Welcome-text {
+
+.Welcome-text{
   background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.4),
@@ -75,7 +76,8 @@ body {
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
+    /* --background: 247; */
+    /* --background: 224 71.4% 4.1%; */
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
