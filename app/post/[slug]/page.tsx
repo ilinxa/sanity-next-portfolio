@@ -1,5 +1,5 @@
 
-import { client } from '@/app/sanityClient/client';
+import { client } from '@/app/lib/client';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
 import React from 'react'
