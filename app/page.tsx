@@ -2,11 +2,7 @@ import CardsLoader from "@/components/cards/CardsLoader";
 import Herosection from "@/components/header/Herosection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface PostType {
-  jobTitle?: string;
-  projectType?: string;
-  projectStatus?: string;
-}
+
 const Home = () => {
 
   return (

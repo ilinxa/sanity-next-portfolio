@@ -2,7 +2,7 @@
 import React, {useState, Suspense, useRef} from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 // npm install three @react-three/fiber
-import { Points, PointMaterial, Preload } from "@react-three/drei"
+import { Points, PointMaterial } from "@react-three/drei"
 // npm i @react-three/drei@9.0.1
 //@ts-ignore
 import * as random from "maath/random/dist/maath-random.esm"
