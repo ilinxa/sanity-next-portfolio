@@ -1,6 +1,5 @@
 import React from 'react'
 import HeroContent from './HeroContent'
-
 const Herosection = () => {
   return (
     <div className='relative flex flex-col h-full w-full mb-10 '>

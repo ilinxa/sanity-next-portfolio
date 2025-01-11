@@ -4,8 +4,6 @@ import Image from 'next/image'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 
-
-
 const CardComponent = (params: {post: PostType}) => {
 
     const borderColor = 

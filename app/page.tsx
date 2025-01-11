@@ -1,13 +1,6 @@
-
-
 import CardsLoader from "@/components/cards/CardsLoader";
 import Herosection from "@/components/header/Herosection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
-
-
-
-
 
 interface PostType {
   jobTitle?: string;
@@ -15,10 +8,6 @@ interface PostType {
   projectStatus?: string;
 }
 const Home = () => {
-
-  // const[tabValue, setTabValue] = useState('webDevelopment');
-  // const data: PostType[] = await getData()
-  // console.log(data)
 
   return (
     <div className="h-full w-full flex flex-col justify-center items-center ">

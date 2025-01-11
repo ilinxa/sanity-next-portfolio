@@ -1,11 +1,6 @@
-
-
 import React from 'react'
 import CardComponent from './CardComponent';
 import { client } from '@/app/lib/client';
-
-
-
 
 export const revalidate = 100;
 // Fetching data 

@@ -7,7 +7,6 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-
 import Image from "next/image";
 import { SparklesIcon } from "lucide-react";
 
