@@ -2,24 +2,7 @@ import React from 'react'
 import CardComponent from './CardComponent';
 import { client } from '@/app/lib/client';
 
-export const revalidate = 100;
-// Fetching data 
-// async function getData(){
-//   const query =`
-//     *[_type == "post"  ] | order(_createdAt asc) {
-//     title,
-//     'currentSlug': slug.current,
-//     shortDescription,
-//     "coverImage": coverImage.asset->url,
-//     projectType,
-//     technologies,
-//     jobTitle,
-//     projectStatus,
-
-//   }`;
-//   const data = await client.fetch(query);
-//   return data;
-// }
+export const revalidate = 0;
 
 
 

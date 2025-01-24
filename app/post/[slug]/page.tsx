@@ -47,14 +47,14 @@ export default async function PostDetails({params}:{params:{slug:string}})  {
           </span>
         </h1>
         {/* -------------------------------------------------------------------- */}
-        <div className='flex flex-col md:flex-row items-center justify-between w-full gap-4 my-5  '>
+        <div className='flex flex-col md:flex-row items-center justify-between w-full gap-4 my-5'>
             {/***************************** type *****************************/}
-            <p className='h-full text-primary'>
+            <p className='h-full text-primary '>
               {data.projectType}
             </p>
             {/* ***************************** tags **************************** */}
             {data.technologies && data.technologies.length > 0 && (
-                <div className="flex gap-2 items-center flex-wrap  ">   
+                <div className="flex gap-2 items-center flex-wrap ">   
                     {data.technologies.map((tag, index) => (
                         <div key={index} className="flex items-center gap-2 bg-primary  rounded-full">
                           {/* <Image

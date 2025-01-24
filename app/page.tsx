@@ -2,8 +2,9 @@ import CardsLoader from "@/components/cards/CardsLoader";
 import Herosection from "@/components/header/Herosection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-
+export const revalidate = 0;
 const Home = () => {
+
   return (
     <div className="h-full  flex flex-col justify-center items-center w-screen z-[10000]">
       <div className="flex flex-col  gap-20 mb-16">

@@ -39,7 +39,7 @@ export default function RootLayout({
           >
           <StarsCanvas/>
           <Navbar/>
-          <main className=" mx-auto  min-h-screen pt-[100px] ">
+          <main className=" mx-auto  min-h-screen pt-[100px]  ">
             {children}
             {/* <video src="blackhole.webm" className="z-[1000]"></video> */}
           </main>
