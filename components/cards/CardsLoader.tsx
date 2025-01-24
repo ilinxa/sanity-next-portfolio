@@ -18,16 +18,16 @@ async function getData(jobTitle?: jobTitleType, projectStatus?: projectStatusTyp
     if (jobTitle) {
       filters.push(`jobTitle == "${jobTitle}"`);
     }
-    if (projectStatus) {
-      filters.push(`projectStatus == "${projectStatus}"`);
-    }
+    // if (projectStatus) {
+    //   filters.push(`projectStatus == "${projectStatus}"`);
+    // }
     if (projectType) {
       filters.push(`projectType == "${projectType}"`);
     }
   
     // Append filters to base query if any
     if (filters.length > 0) {
-      baseQuery += ` && ${filters.join(' && ')}`;
+      baseQuery += ` && ${filters.join('&& ')}`;
     }
   
     // Close query and include fields

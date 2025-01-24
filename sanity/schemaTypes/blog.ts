@@ -242,7 +242,7 @@ export const postType = defineType({
               list: [
                 { title: 'Web Development', value: 'webDevelopment' },
                 // { title: 'Mobile Development', value: 'mobileDevelopment' },
-                                { title: '3D modeling and animation', value: 'motionContent' },
+                { title: '3D modeling and animation', value: 'motionContent' },
                 { title: 'Videography and Editing', value: 'videoEditing' },
               ],
               layout: 'radio', // Optional: Display as radio buttons; remove for a dropdown.
