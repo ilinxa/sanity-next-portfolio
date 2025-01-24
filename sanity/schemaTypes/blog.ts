@@ -237,7 +237,7 @@ export const postType = defineType({
           defineField({
             name: 'jobTitle',
             type: 'string',
-            title: 'Project Type',
+            title: 'job Title',
             options: {
               list: [
                 { title: 'Web Development', value: 'webDevelopment' },
