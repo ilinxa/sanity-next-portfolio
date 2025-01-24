@@ -1,37 +1,29 @@
-import React from 'react'
-import CardComponent from './CardComponent';
-import { client } from '@/app/lib/client';
+import React from "react";
+import CardComponent from "./CardComponent";
+import { client } from "@/app/lib/client";
 
 export const revalidate = 0;
 
+async function getData(justForSale: boolean, jobTitleFilter?: string) {
+  // Base filters array
+  let filters = [];
 
+  // Exclude "soldOut" products if justForSale is true
+  if (justForSale) {
+    filters.push(`projectStatus != "soldOut"`);
+  }
 
-async function getData(jobTitle?: jobTitleType, projectStatus?: projectStatusType, projectType?: ProjectType) {
-    // Base query
-    let baseQuery = `
-      *[_type == "post" 
-    `;
-  
-    // Array to hold filters
-    const filters: string[] = [];
-  
-    if (jobTitle) {
-      filters.push(`jobTitle == "${jobTitle}"`);
-    }
-    // if (projectStatus) {
-    //   filters.push(`projectStatus == "${projectStatus}"`);
-    // }
-    if (projectType) {
-      filters.push(`projectType == "${projectType}"`);
-    }
-  
-    // Append filters to base query if any
-    if (filters.length > 0) {
-      baseQuery += ` && ${filters.join('&& ')}`;
-    }
-  
-    // Close query and include fields
-    baseQuery += `] | order(_createdAt asc) {
+  // Apply jobTitle filter only if it exists
+  if (jobTitleFilter) {
+    filters.push(`jobTitle == "${jobTitleFilter}"`);
+  }
+
+  // Combine filters properly
+  let filterQuery = filters.length ? `&& ${filters.join(" && ")}` : "";
+
+  // Final query
+  let baseQuery = `
+    *[_type == "post" ${filterQuery}] | order(_createdAt asc) {
       title,
       'currentSlug': slug.current,
       shortDescription,
@@ -39,32 +31,28 @@ async function getData(jobTitle?: jobTitleType, projectStatus?: projectStatusTyp
       projectType,
       technologies,
       jobTitle,
-      projectStatus,
+      projectStatus
     }`;
-  
-    // Fetch data
-    const data = await client.fetch(baseQuery);
-    return data;
-  }
 
-async function CardsLoader( params: {jobTitle?: jobTitleType, projectStatus?: projectStatusType, projectType?: ProjectType}) {
-    
-    const data: PostType[] = await getData(params.jobTitle, params.projectStatus, params.projectType);
+  // Only pass jobTitleFilter if it is defined
+  const params = jobTitleFilter ? { jobTitleFilter } : {};
 
-    
-  return (
-    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 gap-5 z-[150]">
-        {
-        data.map((post: PostType, i) => {
-  
-          return (
-            <CardComponent post={post} key={i}  />           
-          );
-        })
-      }
-    </div>
-  )
+  // Fetch data
+  const data = await client.fetch(baseQuery, params);
+  console.log(data);
+  return data;
 }
 
-export default CardsLoader
+async function CardsLoader({ justForSale, jobTitleFilter }: { justForSale: boolean; jobTitleFilter?: string }) {
+  const data: PostType[] = await getData(justForSale, jobTitleFilter);
 
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 gap-5 z-[150]">
+      {data.map((post: PostType, i) => (
+        <CardComponent post={post} key={i} />
+      ))}
+    </div>
+  );
+}
+
+export default CardsLoader;

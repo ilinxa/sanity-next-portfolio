@@ -19,18 +19,25 @@ const Home = () => {
           <TabsTrigger value="motionContent" className="text-wrap h-full w-full" >3D Motion Content</TabsTrigger>
           <TabsTrigger value="forSale" className="text-wrap h-full w-[30%] bg-primary color-white" >For Sale</TabsTrigger>
         </TabsList>
+        {/* 
+        webDevelopment
+        motionContent
+      videoEditing
+         */}
 
         <TabsContent value="webDevelopment">
-          <CardsLoader jobTitle="webDevelopment" projectStatus="soldOut"/>
+          <CardsLoader justForSale={false} jobTitleFilter="webDevelopment" />
         </TabsContent>
+
         <TabsContent value="videoEditing">
-          <CardsLoader jobTitle="videoEditing" projectStatus="soldOut"/>
+          <CardsLoader justForSale={false} jobTitleFilter="videoEditing" />
         </TabsContent>
+
         <TabsContent value="motionContent">
-          <CardsLoader jobTitle="motionContent" projectStatus="soldOut"/>
+          <CardsLoader justForSale={false} jobTitleFilter="motionContent" />
         </TabsContent>
-        <TabsContent value="motionContent">
-          <CardsLoader projectStatus="forSale"/>
+        <TabsContent value="forSale">
+          <CardsLoader justForSale={true}  />
         </TabsContent>
       </Tabs>
       </div>
