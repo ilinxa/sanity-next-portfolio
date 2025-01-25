@@ -2,7 +2,7 @@ import CardsLoader from "@/components/cards/CardsLoader";
 import Herosection from "@/components/header/Herosection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-
+export const revalidate = 0;
 const Home = () => {
 
   return (
